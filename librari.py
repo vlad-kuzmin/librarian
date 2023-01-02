@@ -10,7 +10,7 @@ class Library:
 
     def __init__(self, name=None):
         self.name = name
-        self.books = 0
+        self.catalogs = list()
 
     def __str__(self):
         return self.name if self.name else "unnamed"
