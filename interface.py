@@ -53,6 +53,7 @@ class LibraryClientInterface:
 		self.__librarian.register_reader(name, surname, patronymic)
 		self.__librarian.add_get_note_to_reader_book(searched[book_num - 1], name, surname, patronymic)
 		self.__librarian.del_book(searched[book_num - 1])
+		print("Спасибо что пришли к нам, книга выдана, запись в книгу читателя добавлена.")
 
 	def return_book(self):
 		name = input("Введите имя: ")
@@ -63,3 +64,4 @@ class LibraryClientInterface:
 		book_genre = input("Введите жанр: ")
 		self.__librarian.add_pass_note_to_reader_book(name, surname, patronymic, book_name, book_author)
 		self.__librarian.add_book(book_name, book_author, book_genre)
+		print("Спасибо что вернули книгу, запись в книгу читателя добавлена.")
