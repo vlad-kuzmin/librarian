@@ -1,13 +1,13 @@
 class Book:
 
-	def __init__(self, name: str, author: str, genre: str):
-		self.name = name
-		self.author = author
-		self.genre = genre
+	def __init__(self):
+		self.name = None
+		self.author = None
+		self.genre = None
 
 	def __str__(self):
-		info = f"name: {self.name}\n" \
-			   f"author: {self.author}\n" \
-			   f"genre: {self.genre}"
+		info = f"Название: {self.name}\n" \
+			   f"Автор: {self.author}\n" \
+			   f"Жанр: {self.genre}"
 
 		return info

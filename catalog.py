@@ -26,7 +26,7 @@ class Catalog:
 		search_result = list()
 
 		for book in self.storage:
-			if book.name == author:
+			if book.author == author:
 				search_result.append(book)
 
 		return search_result
@@ -39,6 +39,18 @@ class Catalog:
 				search_result.append(book)
 
 		return search_result
+
+	def search_and_delete(self, name: str, author: str, amount: int = 1):
+		searched_indexes = list()
+		for book_ind in range(len(self.storage)):
+			if self.storage[book_ind].name == name and self.storage[book_ind].author == author:
+				searched_indexes.append(book_ind)
+		for i in range(amount):
+			self.storage.pop(searched_indexes[i])
+
+	def delete(self, book: Book):
+		if book in self.storage:
+			self.storage.remove(book)
 
 	def __str__(self):
 		info = f"catalog genre: {self.genre}\n" \
